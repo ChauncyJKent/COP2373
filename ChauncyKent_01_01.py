@@ -1,39 +1,45 @@
-# Defines the set_message function and its arguments.
-def set_message(tickets):
-    """Takes in the number of tickets as an argument and returns the 
-    appropriate message for the next customer.
+# Defines the set_max_ticks function and its arguments.
+def set_max_ticks(tickets, maximum=4):
+    """Takes in the number of tickets and a default maximum number of 
+    tickets as arguments and returns the appropriate maximum number of 
+    tickets the next customer may buy. 
 
     args:
     tickets = An integer representing the number of tickets remaining.
+    maximum = An integer representing the maximum number of tickets a 
+        customer may purchase. Defaults to 4.
+    """
+    # Initializes the max_tickets variable and sets its value to 4.
+    max_tickets = maximum
+    # Evaluates the number of remaining tickets and sets max_tickets to 
+    # the remaining value if it is lower than 4.
+    if tickets < maximum:
+        max_tickets = tickets
+
+    # Returns max_tickets as an integer.
+    return max_tickets
+
+# Defines the set_message function and its arguments.
+def set_message(tickets, max_ticks):
+    """Takes in the number of tickets and the max number of tickets as 
+    arguments and returns the appropriate message for the next customer. 
+
+    args:
+    tickets = An integer representing the number of tickets remaining.
+    max_ticks = An integer representing the maximum number of tickets a 
+        customer may purchase.
     """
     # Initializes the message variable with an empty string.
     message = ''
     # Evaluates the number of tickets remaining. If 4 or more remain, 
     # The first message is used, otherwise the second is used.
-    if tickets >= 4:
-        message = 'How many tickets would you like? You may purchase up to 4. '
+    if tickets >= max_ticks:
+        message = f'How many tickets would you like? You may purchase up to {max_ticks}. '
     else:
         message = f'How many tickets would you like? You may purchase up to {tickets}. '
 
     # Returns the designated message as a string.
     return message
-# Defines the set_max_ticks function and its arguments.
-def set_max_ticks(tickets):
-    """Takes in the number of tickets as an argument and returns the
-    appropriate maximum number of tickets the next customer may buy.
-
-    args:
-    tickets = An integer representing the number of tickets remaining.
-    """
-    # Initializes the max_tickets variable and sets its value to 4.
-    max_tickets = 4
-    # Evaluates the number of remaining tickets and sets max_tickets to 
-    # the remaining value if it is lower than 4.
-    if tickets < 4:
-        max_tickets = tickets
-
-    # Returns max_tickets as an integer.
-    return max_tickets
 
 # Defines the buy_ticks function and its arguments.
 def buy_ticks(tickets):
@@ -43,12 +49,13 @@ def buy_ticks(tickets):
     args:
     tickets = An integer representing the number of tickets remaining.
     """
-    # Calls the set_message function to set an appropriate message for 
-    # the next customer.
-    message = set_message(tickets)
     # Calls the set_max_ticks function to set an appropriate value for 
     # the maximum number of tickets each customer may purchase.
     max_ticks = set_max_ticks(tickets)
+
+    # Calls the set_message function to set an appropriate message for 
+    # the next customer.
+    message = set_message(tickets, max_ticks)
     
     # Starts an input validation loop.
     while True:
@@ -57,7 +64,7 @@ def buy_ticks(tickets):
         # Attempts to convert the customer's input to an integer. If 
         # there is an error, prints a message and restarts the loop.
         try:
-            int(order)
+            order = int(order)
         except:
             print('Please enter a number')
             continue
@@ -65,11 +72,11 @@ def buy_ticks(tickets):
         # Evaluates the customer input to see if it's within the 
         # allowable range. If not prints a message and restarts the 
         # loop. Otherwise returns the value of order.
-        if int(order) > max_ticks or int(order) < 1:
+        if order > max_ticks or order < 1:
             print(f'Please enter a number between 1 and {max_ticks}.')
             continue
         else:
-            return int(order)
+            return order
         
 # Defines the main function.
 def main():
