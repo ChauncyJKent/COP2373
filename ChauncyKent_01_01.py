@@ -84,7 +84,7 @@ def main():
     and helper functions are called.
     """
     # Initializes the tickets variable with a value of 20.
-    tickets = 20
+    tickets = 10
     # Initializes the customers variable with a value of 0.
     customers = 0
 
