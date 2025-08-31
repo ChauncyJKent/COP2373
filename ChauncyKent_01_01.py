@@ -34,9 +34,9 @@ def set_message(tickets, max_ticks):
     # Evaluates the number of tickets remaining. If 4 or more remain, 
     # The first message is used, otherwise the second is used.
     if tickets >= max_ticks:
-        message = f'How many tickets would you like? You may purchase up to {max_ticks}. '
+        message = f'How many tickets do you need? You may purchase up to {max_ticks}. '
     else:
-        message = f'How many tickets would you like? You may purchase up to {tickets}. '
+        message = f'How many tickets do you need? You may purchase up to {tickets}. '
 
     # Returns the designated message as a string.
     return message
