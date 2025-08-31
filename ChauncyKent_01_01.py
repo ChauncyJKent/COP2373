@@ -86,7 +86,7 @@ def main():
     # Initializes the tickets variable with a value of 20.
     tickets = 10
     # Initializes the customers variable with a value of 0.
-    customers = 0
+    buyers = 0
 
     # Starts a loop that runs until there are no more tickets.
     while tickets > 0:
@@ -94,10 +94,10 @@ def main():
         # the total.
         tickets -= buy_ticks(tickets)
         # On each loop, adds 1 to the number of customers.
-        customers += 1
+        buyers += 1
     
     # Displays the total number of customers.
-    print(f'Total number of customers: {customers}')
+    print(f'Total number of customers: {buyers}')
         
 if __name__ == '__main__':
     main()
