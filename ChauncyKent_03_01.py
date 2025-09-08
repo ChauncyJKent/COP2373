@@ -28,6 +28,8 @@ class ExpenseAnalyzer:
                 expense_type = input('Please enter the name of the expense: ')
                 if expense_type in self.expenses.keys():
                     raise Exception()
+                else:
+                    invalid = True
             except:
                 print('Please enter a unique expense name.')
                 continue
