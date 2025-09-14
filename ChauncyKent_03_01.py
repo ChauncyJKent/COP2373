@@ -52,6 +52,7 @@ class ExpenseAnalyzer:
                 # to enter a number.
                 print('Please enter a number.')
                 continue
+
         # Returns the validated expense.
         return expense
     
@@ -134,8 +135,6 @@ class ExpenseAnalyzer:
             # variable to False, otherwise starts the next loop.
             if answer.lower() == 'n':
                 more = False
-            else:
-                continue
 
     # Defines the analyze_expenses method.
     def analyze_expenses(self):
