@@ -1,12 +1,12 @@
 # ChauncyKent_08_csv
 
-"""Contains the GradeBook class and the main function. The main 
-function creates an instance of the GradeBook class and calls the 
-appropriate methods in the correct order to allow the user to enter the 
-names and grades of a specified number of students into the grade book 
-which is saved to a csv file. The final method called then opens and 
-reads that information from the csv file and displays it for the user 
-in a tabular format.
+"""Contains the GradeBook class and the main function. The main function 
+creates an instance of the GradeBook class and calls the appropriate 
+methods in the correct order to allow the user to enter the names and 
+grades of a specified number of students into the grade book, which is 
+saved to a CSV file. The final method called, then opens and reads that 
+information from the CSV file, displaying it for the user in a tabular 
+format.
 """
 
 # imports the csv module.
