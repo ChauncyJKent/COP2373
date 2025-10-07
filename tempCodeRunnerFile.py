@@ -1,1 +1,0 @@
-self._clean_sentences()
